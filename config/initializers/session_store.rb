@@ -1,1 +1,1 @@
-Rails.application.config.session_store :cookie_store, key: "_your_app_session", expire_after: 20.minutes
+Rails.application.config.session_store :cookie_store, key: "_myapp", tld_length: 2
