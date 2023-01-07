@@ -5,9 +5,8 @@
 
 # Read more: https://github.com/cyu/rack-cors
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  url = "https://post-it-app.herokuapp.com"
   allow do
-    origins url
+    origins "https://post-it-app.herokuapp.com/"
     resource "*",
              headers: :any,
              methods: [:get, :post, :put, :patch, :delete, :options, :head],
