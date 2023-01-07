@@ -1,6 +1,13 @@
 production:
   cloud_name: dak51aus6
-  api_key: "923759981691627"
-  api_secret: "PV4_GXqjDUqjTlTqIuLCS4Vt9os"
+  api_key: <%= ENV['CLOUDINARY_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_SECRET'] %>
+  enhance_image_tag: true
+  static_file_support: true
+
+development:
+  cloud_name: dak51aus6
+  api_key: <%= ENV['CLOUDINARY_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_SECRET'] %>
   enhance_image_tag: true
   static_file_support: true
