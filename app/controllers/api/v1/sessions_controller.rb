@@ -1,4 +1,4 @@
-class Api::V1::SessionsController < ApplicationController
+class SessionsController < ApplicationController
 
 =begin
   Implementations of sessions are referenced from 

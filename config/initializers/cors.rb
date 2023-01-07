@@ -5,8 +5,9 @@
 
 # Read more: https://github.com/cyu/rack-cors
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  url = Rails.env == "production" ? "https://post-it-app.herokuapp.com" : "http://localhost:3001"
   allow do
-    origins "http://localhost:3001"
+    origins url
     resource "*",
              headers: :any,
              methods: [:get, :post, :put, :patch, :delete, :options, :head],

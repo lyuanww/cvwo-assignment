@@ -1,4 +1,4 @@
-class Api::V1::TagsController < ApplicationController
+class TagsController < ApplicationController
   before_action :set_tag, only: %i[ show update destroy ]
   after_action :filter_unused_tags
 
