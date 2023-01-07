@@ -8,7 +8,7 @@ gem "rails", "~> 7.0.4"
 
 gem "cloudinary"
 
-gem "rails_same_site_cookie", "~> 0.1.8"
+gem "rails_same_site_cookie", "~> 0.1.9"
 
 gem "active_model_serializers"
 
