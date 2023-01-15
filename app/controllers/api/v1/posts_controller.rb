@@ -2,6 +2,7 @@ class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: %i[ show update destroy ]
 
   # GET /posts
+  # json response is modified to deal with multiple-level relations
   def index
     @posts = Post.all
     render json: @posts, each_serializer: PostSerializer, include: ["comments", "comments.user", "user", "tags"]
@@ -13,10 +14,14 @@ class Api::V1::PostsController < ApplicationController
     render json: @post
   end
 
+  # GET /posts/current_user
+
   def showByCurrentUser
     @posts = Post.where(user_id: session[:user_id]).all
     render json: @posts, each_serializer: PostSerializer, include: ["comments", "comments.user", "user", "tags"]
   end
+
+  # GET /posts/tags/1
 
   def showByTag
     @tag = Tag.find(params[:id])
@@ -71,9 +76,12 @@ class Api::V1::PostsController < ApplicationController
   end
 
   private
+
 =begin
 This method is referenced from https://www.youtube.com/watch?v=03enr4NNgLI
 =end
+
+  # Create or delete related tags when user creates or edits a post
   def create_or_delete_posts_tags(post, tags)
     post.taggables.destroy_all
     tags.each do |tag|

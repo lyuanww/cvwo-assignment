@@ -42,8 +42,7 @@ class Api::V1::TagsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-
+  #Delete unused tags
   def filter_unused_tags
     @tags = Tag.all
     @taggables = Taggable.all

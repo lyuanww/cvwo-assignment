@@ -4,6 +4,8 @@ class Api::V1::SessionsController < ApplicationController
   Implementations of sessions are referenced from 
   https://medium.com/@altanner/react-user-authentication-with-rails-sessions-and-redux-194b5d31fe5a
 =end
+
+  #POST /login
   def create
     user = User.find_by(username: session_params[:username])
     if user && user.authenticate(session_params[:password])
@@ -20,6 +22,8 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
+  # GET /logged_in
+
   def is_logged_in?
     current_user = User.find(session[:user_id]) if session[:user_id]
     if current_user
@@ -33,6 +37,8 @@ class Api::V1::SessionsController < ApplicationController
              }
     end
   end
+
+  #DELETE /logout
 
   def destroy
     session.delete :user_id
