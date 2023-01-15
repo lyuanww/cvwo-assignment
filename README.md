@@ -1,24 +1,10 @@
-# README
+Name: Wong Li Yuan
+Matriculation number: A0262316L
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Post it!
 
-Things you may want to cover:
+This is a backend application that made for the Post it! app.
 
-* Ruby version
+## Project Description
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Backend application built with Ruby on Rails. Images are uploaded to Cloudinary. This server returns responses to the [frontend application](https://post-it-app.herokuapp.com/).
