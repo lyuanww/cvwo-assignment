@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: "https://post-it.herokuapp.com",
+  host: "http://localhost:3000",
 }
 
 Rails.application.configure do
@@ -12,6 +12,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
 
   config.cache_classes = false
+
+  config.middleware.use ActionDispatch::Cookies
+  config.middleware.use ActionDispatch::Session::CookieStore
 
   # Do not eager load code on boot.
   config.eager_load = false
