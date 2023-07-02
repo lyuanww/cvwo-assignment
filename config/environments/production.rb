@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: "https://postit-a8rt.onrender.com/",
+  host: "https://postit-a8rt.onrender.com",
 }
 
 Rails.application.configure do
