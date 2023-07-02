@@ -1,14 +1,11 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: "http://localhost:3000/",
+  host: "https://postit-a8rt.onrender.com/",
 }
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.session_store :cookie_store, key: "_interslice_session", secure: true, same_site: :none
-  config.middleware.use ActionDispatch::Cookies
-  config.middleware.use config.session_store, config.session_options
 
   # Code is not reloaded between requests.
   config.cache_classes = true
