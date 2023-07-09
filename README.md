@@ -1,6 +1,3 @@
-Name: Wong Li Yuan
-Matriculation number: A0262316L
-
 # Post it!
 
 This is a backend application that made for the Post it! app.
